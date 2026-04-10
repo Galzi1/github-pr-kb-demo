@@ -28,3 +28,14 @@ def calculate_total_with_discount(subtotal: float, sales_tax_rate: float, discou
 
     discounted_subtotal = max(subtotal - discount_amount, 0.0)
     return calculate_total(discounted_subtotal, sales_tax_rate=sales_tax_rate)
+
+
+def calculate_total_with_percentage_discount(
+    subtotal: float,
+    sales_tax_rate: float,
+    discount_rate: float,
+) -> float:
+    """Apply a percentage discount before tax."""
+
+    discounted_subtotal = subtotal * (1 - discount_rate)
+    return calculate_total(discounted_subtotal, sales_tax_rate=sales_tax_rate)
