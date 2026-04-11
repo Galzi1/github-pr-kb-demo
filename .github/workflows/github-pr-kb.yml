@@ -26,7 +26,7 @@ concurrency:
 
 env:
   KB_TOOL_REPOSITORY: Galzi1/github-pr-kb
-  KB_TOOL_REF: a1c9a68ccdde00ac28273a0b815955c7d5b85dae
+  KB_TOOL_REF: 8ea86ddac0845aa0025cf7cbd99ef00d0d89b00d
   KB_TOOL_PATH: .github-pr-kb-tool
   KB_VARIABLE_NAME: KB_LAST_SUCCESSFUL_CURSOR
   KB_BOT_BRANCH: automation/github-pr-kb
