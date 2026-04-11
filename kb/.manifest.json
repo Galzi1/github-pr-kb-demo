@@ -1,1 +1,18 @@
-{}
+{
+  "3063857930": "gotcha/renaming-a-function-parameter-breaks-backward-compatibility.md",
+  "3063857933": "gotcha/discount-amounts-are-not-validated-allowing-negative-totals.md",
+  "3064005728": "architecture_decision/question-about-whether-the-discount-api-should-support-both.md",
+  "3064070142": "architecture_decision/chose-to-maintain-backward-compatibility-through-an-alias.md",
+  "3064070321": "gotcha/the-function-now-prevents-negative-charges-and-taxes-by.md",
+  "3064070542": "domain_knowledge/discount-amount-represents-an-absolute-value-rather-than-a.md",
+  "4223263760": "code_pattern/adding-a-helper-function-for-discount-pricing-calculations.md",
+  "4223264048": "gotcha/renaming-a-function-parameter-breaks-backward-compatibility-2.md",
+  "4223530384": "domain_knowledge/tax-calculation-order-relative-to-discounts-is-a-business.md",
+  "4223569372": "domain_knowledge/the-pricing-rule-applies-absolute-discounts-before-tax.md",
+  "3066877543": "gotcha/unbounded-discount-rate-parameter-can-produce-negative.md",
+  "3066907088": "gotcha/unvalidated-discount-rate-values-can-produce-incorrect.md",
+  "3066907115": "architecture_decision/consolidating-percentage-and-absolute-discount-calculations.md",
+  "3066907152": "domain_knowledge/clarify-discount-rate-input-format-and-tax-application.md",
+  "4226957527": "code_pattern/the-discount-calculation-uses-a-multiplier-approach-1.md",
+  "4226957619": "gotcha/the-new-percentage-discount-function-lacks-input-validation.md"
+}
