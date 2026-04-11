@@ -20,10 +20,12 @@
 - [Tax calculation order relative to discounts is a business rule that needs explicit documentation.](domain_knowledge/tax-calculation-order-relative-to-discounts-is-a-business.md)
 - [The pricing rule applies absolute discounts before tax calculation, with the business logic now documented in code and demonstrated in test cases.](domain_knowledge/the-pricing-rule-applies-absolute-discounts-before-tax.md)
 
-## Gotcha (8)
+## Gotcha (10)
 
 - [Discount amounts are not validated, allowing negative totals and tax calculations to propagate invalid charges downstream.](gotcha/discount-amounts-are-not-validated-allowing-negative-totals.md)
+- [Discount calculation can exceed subtotal and produce negative totals, unlike the clamped behavior in the similar function.](gotcha/discount-calculation-can-exceed-subtotal-and-produce.md)
 - [Negative discount caps and rates above 1.0 can silently invert discounts into surcharges or make subtotals negative while appearing mathematically correct.](gotcha/negative-discount-caps-and-rates-above-1-0-can-silently.md)
+- [Negative max_discount_amount silently converts a discount into a surcharge by making discount_amount negative, exploiting an unvalidated input parameter.](gotcha/negative-max-discount-amount-silently-converts-a-discount.md)
 - [Renaming a function parameter breaks backward compatibility for callers using keyword arguments, with no migration path provided.](gotcha/renaming-a-function-parameter-breaks-backward-compatibility.md)
 - [Renaming a function parameter breaks backward compatibility for callers using keyword arguments without providing a deprecation path.](gotcha/renaming-a-function-parameter-breaks-backward-compatibility-2.md)
 - [The function now prevents negative charges and taxes by rejecting negative discounts and clamping subtotals to zero, addressing unexpected edge case behavior.](gotcha/the-function-now-prevents-negative-charges-and-taxes-by.md)

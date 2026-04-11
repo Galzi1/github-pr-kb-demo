@@ -17,5 +17,7 @@
   "4226957619": "gotcha/the-new-percentage-discount-function-lacks-input-validation.md",
   "3067724989": "gotcha/negative-discount-caps-and-rates-above-1-0-can-silently.md",
   "3067725001": "architecture_decision/refactor-to-calculate-capped-discount-once-and-delegate-to.md",
-  "3067725011": "domain_knowledge/discount-calculation-rules-pre-post-tax-and-scope-are.md"
+  "3067725011": "domain_knowledge/discount-calculation-rules-pre-post-tax-and-scope-are.md",
+  "3067725988": "gotcha/negative-max-discount-amount-silently-converts-a-discount.md",
+  "3067725989": "gotcha/discount-calculation-can-exceed-subtotal-and-produce.md"
 }
