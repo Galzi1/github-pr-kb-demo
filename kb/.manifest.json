@@ -14,5 +14,6 @@
   "3066907115": "architecture_decision/consolidating-percentage-and-absolute-discount-calculations.md",
   "3066907152": "domain_knowledge/clarify-discount-rate-input-format-and-tax-application.md",
   "4226957527": "code_pattern/the-discount-calculation-uses-a-multiplier-approach-1.md",
-  "4226957619": "gotcha/the-new-percentage-discount-function-lacks-input-validation.md"
+  "4226957619": "gotcha/the-new-percentage-discount-function-lacks-input-validation.md",
+  "4228375029": "domain_knowledge/pr-closure-explained-by-dependency-on-prior-knowledge-base.md"
 }

@@ -11,10 +11,11 @@
 - [Adding a helper function for discount pricing calculations that applies discounts before tax computation.](code_pattern/adding-a-helper-function-for-discount-pricing-calculations.md)
 - [The discount calculation uses a multiplier approach (1 - discount_rate) rather than direct subtraction, which is a common pattern for composable percentage calculations.](code_pattern/the-discount-calculation-uses-a-multiplier-approach-1.md)
 
-## Domain Knowledge (4)
+## Domain Knowledge (5)
 
 - [Clarify discount_rate input format and tax application semantics in documentation since they directly affect invoice calculations.](domain_knowledge/clarify-discount-rate-input-format-and-tax-application.md)
 - [discount_amount represents an absolute value rather than a percentage, with tax calculated post-discount; percentage discounts would be handled separately.](domain_knowledge/discount-amount-represents-an-absolute-value-rather-than-a.md)
+- [PR closure explained by dependency on prior knowledge base PR and validation strategy for extractor-side fixes.](domain_knowledge/pr-closure-explained-by-dependency-on-prior-knowledge-base.md) [review]
 - [Tax calculation order relative to discounts is a business rule that needs explicit documentation.](domain_knowledge/tax-calculation-order-relative-to-discounts-is-a-business.md)
 - [The pricing rule applies absolute discounts before tax calculation, with the business logic now documented in code and demonstrated in test cases.](domain_knowledge/the-pricing-rule-applies-absolute-discounts-before-tax.md)
 
