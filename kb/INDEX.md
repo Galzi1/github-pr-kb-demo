@@ -27,3 +27,8 @@
 - [The new percentage discount function lacks input validation, allowing negative discount rates to increase totals and rates above 1.0 to produce negative totals, unlike the existing absolute discount h](gotcha/the-new-percentage-discount-function-lacks-input-validation.md)
 - [Unbounded discount_rate parameter can produce negative totals or unintended surcharges due to missing input validation, unlike the similar absolute discount function that includes guards.](gotcha/unbounded-discount-rate-parameter-can-produce-negative.md)
 - [Unvalidated discount_rate values can produce incorrect pricing (surcharges or negative totals) while maintaining mathematical validity, making bugs hard to detect.](gotcha/unvalidated-discount-rate-values-can-produce-incorrect.md)
+
+## Other (2)
+
+- [This is a placeholder message from an automated code review tool indicating analysis is in progress.](other/this-is-a-placeholder-message-from-an-automated-code-review.md)
+- [This is an automated review summary documenting the creation of a knowledge base with 16 categorized insights from pricing helper PR reviews, organized into architecture decisions, code patterns, doma](other/this-is-an-automated-review-summary-documenting-the.md)
