@@ -17,5 +17,9 @@
   "4226957619": "gotcha/the-new-percentage-discount-function-lacks-input-validation.md",
   "3067724989": "gotcha/negative-discount-caps-and-rates-above-1-0-can-silently.md",
   "3067725001": "architecture_decision/refactor-to-calculate-capped-discount-once-and-delegate-to.md",
-  "3067725011": "domain_knowledge/discount-calculation-rules-pre-post-tax-and-scope-are.md"
+  "3067725011": "domain_knowledge/discount-calculation-rules-pre-post-tax-and-scope-are.md",
+  "3067728940": "gotcha/minimum-charge-validation-is-missing-which-can-cause.md",
+  "3067728949": "architecture_decision/consolidating-discount-logic-into-a-single-helper-reduces.md",
+  "3067728955": "domain_knowledge/clarifying-whether-minimum-charge-applies-to-pre-tax.md",
+  "3067729934": "gotcha/negative-discount-or-minimum-charge-inputs-silently-produce.md"
 }
