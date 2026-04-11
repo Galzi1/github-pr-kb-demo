@@ -52,3 +52,15 @@ def calculate_total_with_capped_percentage_discount(
     discount_amount = min(subtotal * discount_rate, max_discount_amount)
     discounted_subtotal = subtotal - discount_amount
     return calculate_total(discounted_subtotal, sales_tax_rate=sales_tax_rate)
+
+
+def calculate_total_with_minimum_charge(
+    subtotal: float,
+    sales_tax_rate: float,
+    discount_amount: float,
+    minimum_charge: float = 0.0,
+) -> float:
+    """Apply a discount before tax, but never reduce the subtotal below a floor."""
+
+    adjusted_subtotal = max(subtotal - discount_amount, minimum_charge)
+    return calculate_total(adjusted_subtotal, sales_tax_rate=sales_tax_rate)
