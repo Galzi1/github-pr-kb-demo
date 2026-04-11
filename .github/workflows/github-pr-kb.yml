@@ -26,7 +26,7 @@ concurrency:
 
 env:
   KB_TOOL_REPOSITORY: Galzi1/github-pr-kb
-  KB_TOOL_REF: 8ea86dd741d1ea6e190264c2ca891c0c5d514891
+  KB_TOOL_REF: a1004dec669889eb7b39c4edbc109d1d0bd57581
   KB_TOOL_PATH: .github-pr-kb-tool
   KB_VARIABLE_NAME: KB_LAST_SUCCESSFUL_CURSOR
   KB_BOT_BRANCH: automation/github-pr-kb
@@ -131,8 +131,8 @@ jobs:
         run: |
           set -euo pipefail
           latest_merged_at="$(
-            gh api "/repos/${GITHUB_REPOSITORY}/pulls?state=closed&sort=updated&direction=desc&per_page=100" \
-              --jq 'map(select(.merged_at != null))[0].updated_at // ""'
+            gh api "/search/issues?q=repo:${GITHUB_REPOSITORY}+is:pr+is:merged&sort=updated&order=desc&per_page=1" \
+              --jq '.items[0].updated_at // ""'
           )"
           echo "value=${latest_merged_at}" >> "$GITHUB_OUTPUT"
 
@@ -300,7 +300,25 @@ jobs:
             exit "${status}"
           fi
           rm -f "${stderr_file}"
-          persisted_cursor="$(python -c "from datetime import datetime, timezone; import sys; values = [datetime.fromisoformat(raw.replace('Z', '+00:00')).astimezone(timezone.utc) for raw in sys.argv[1:] if raw]; print(max(values).isoformat().replace('+00:00', 'Z') if values else '')" "${fresh_cursor}" "${candidate_cursor}")"
+          persisted_cursor="$(python - "${fresh_cursor}" "${candidate_cursor}" <<'PY'
+          import sys
+          from datetime import datetime, timezone
+
+          valid = []
+          for raw in sys.argv[1:]:
+              if not raw:
+                  continue
+              try:
+                  dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+                  valid.append(dt.astimezone(timezone.utc))
+              except (ValueError, TypeError):
+                  print(f"::warning::Ignoring unparsable cursor value: {raw}", file=sys.stderr)
+          if valid:
+              print(max(valid).isoformat().replace("+00:00", "Z"))
+          else:
+              print("")
+          PY
+          )"
           if [ "${variable_exists}" = "true" ]; then
             gh api --method PATCH "${endpoint}" -f name="${KB_VARIABLE_NAME}" -f value="${persisted_cursor}" >/dev/null
           else
